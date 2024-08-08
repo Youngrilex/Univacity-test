@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { HeroComponent } from '../../hero/hero.component';
-import { CommComponent } from '../../comm/comm.component';
 import { SectionComponent } from '../../section/section.component';
 
 
@@ -8,7 +7,7 @@ import { SectionComponent } from '../../section/section.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeroComponent,CommComponent,SectionComponent],
+  imports: [HeroComponent,SectionComponent],
   templateUrl: './homepage.component.html',
 
 })

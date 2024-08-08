@@ -1,0 +1,26 @@
+<div class="flex items-center justify-center space-x-2 my-6">
+  <button
+    (click)="previousPage()"
+    [disabled]="currentPage === 1"
+    class="px-[15px] py-2 border rounded-l-lg bg-[#C5CBDA]"
+  >
+    &lt;
+  </button>
+  <ng-container *ngFor="let page of pages">
+    <button
+      (click)="goToPage(page)"
+      [class.font-bold]="currentPage === page"
+      class="px-2 py-1 border rounded-lg"
+    >
+    {{ page }}
+    </button>
+
+  </ng-container>
+  <button
+    (click)="nextPage()"
+    [disabled]="currentPage === totalPages"
+    class="px-[15px] py-2 border border-[#C5CBDA] rounded-r-lg"
+  >
+    &gt;
+  </button>
+</div>

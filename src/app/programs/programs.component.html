@@ -1,0 +1,54 @@
+<div class="flex items-center justify-between p-4">
+  <div class="text-[16px] flex items-center gap-5">
+    <p class="text-[24px] font-bold">Programs</p>
+    <p class="border-x-[1px] border-[#C5CBDA] px-5">Saved programs (89)</p>
+    <p>Applied (29)</p>
+  </div>
+  <div class="hidden sm:hidden md:flex lg:flex items-center gap-5">
+    <p>View</p>
+    <icon-grid></icon-grid>
+    <icon-list></icon-list>
+  </div>
+</div>
+<div class="flex sm:flex md:hidden lg:hidden items-center justify-between mx-3">
+  <div class="flex items-center gap-5">
+    <p>View</p>
+    <icon-grid></icon-grid>
+    <icon-list></icon-list>
+  </div>
+  <div class="flex gap-4 items-center">
+    <p>Sort by:</p>
+    <div class="flex gap-5 items-center rounded-lg p-2 text-[#184EC9] text-[16px] font-bold border-[2px] border-[#777C88]">
+      <p>Popularity</p>
+      <icon-dropdown />
+    </div>
+  </div>
+</div>
+
+<form  [formGroup]="searchForm" class="flex items-center justify-between px-4 mb-4">
+  <input
+      formControlName="search"
+      type="text"
+      placeholder="Search for programs"
+      class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 mt-2 p-2 border-[2px] rounded-md border-[#777C88]"
+    />
+  <div class="hidden sm:hidden md:flex lg:flex gap-4 items-center">
+    <p>Sort by:</p>
+    <div class="flex gap-5 items-center rounded-lg p-2 text-[#184EC9] text-[16px] font-bold border-[2px] border-[#777C88]">
+      <p>Popularity</p>
+      <icon-dropdown />
+    </div>
+  </div>
+</form>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
+  <app-program-card
+    *ngFor="let program of paginatedPrograms"
+    [program]="program"
+  ></app-program-card>
+</div>
+<app-paginator
+  [totalItems]="filteredPrograms.length"
+  [itemsPerPage]="itemsPerPage"
+  (pageChange)="onPageChange($event)"
+></app-paginator>
+

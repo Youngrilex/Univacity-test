@@ -1,0 +1,89 @@
+<div class="flex h-[72px] items-center justify-between px-4 sm:px-12">
+  <div class="flex gap-16">
+    <icon-logo></icon-logo>
+    <div class="hidden md:flex gap-8">
+      <div class="flex gap-1 items-center text-[16px] font-semibold">
+        <p>Products</p>
+        <icon-dropdown />
+      </div>
+      <div class="flex gap-1 items-center text-[16px] font-semibold">
+        <p>Solutions</p>
+        <icon-dropdown />
+      </div>
+      <div class="flex gap-1 items-center text-[16px] font-semibold">
+        <p>Resources</p>
+        <icon-dropdown></icon-dropdown>
+      </div>
+      <div class="flex gap-1 items-center text-[16px] font-semibold">
+        <p>Our Company</p>
+        <icon-dropdown></icon-dropdown>
+      </div>
+    </div>
+  </div>
+  <div class="flex gap-6 items-center">
+    <!-- button to toggle between home and search -->
+    <button (click)="onIconClick()">
+      <ng-container *ngIf="isSearchIcon; else homeIcon">
+        <icon-search></icon-search>
+      </ng-container>
+      <ng-template #homeIcon>
+        <icon-home></icon-home>
+      </ng-template>
+    </button>
+    <icon-inbox></icon-inbox>
+    <div class="flex gap-1 items-center">
+      <img
+        src="/profile.png"
+        alt="profile picture"
+        class="h-[32px] w-[32px] rounded-full"
+      />
+      <icon-dropdown />
+    </div>
+  </div>
+  <button
+    (click)="toggleNavbar()"
+    class="md:hidden text-[#777C88] hover:text-gray-600"
+  >
+    <icon-menu />
+  </button>
+  <!-- navbar for mobile screen  -->
+  <div [ngClass]="{'block': navbarOpen, 'hidden': !navbarOpen}" class="py-5">
+    <div
+      class="flex flex-col gap-4 py-3 items-center absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-20 animate-dropdown"
+    >
+      <p>Products</p>
+      <p>Solutions</p>
+      <p>Resources</p>
+      <p>Our Company</p>
+    </div>
+  </div>
+</div>
+
+<div
+  class="flex flex-col sm:flex-row sm:gap-8 h-[48px] border-[1px] border-[#EDF2FD] text-[16px] justify-center px-4 sm:px-12"
+>
+  <div class="flex gap-8 items-center">
+    <div class="flex gap-2 items-center">
+      <icon-dashboard></icon-dashboard>
+      <p>Dashboard</p>
+    </div>
+    <div class="flex gap-2 items-center">
+      <icon-apk></icon-apk>
+      <p>Applications</p>
+    </div>
+    <div class="flex gap-2 items-center">
+      <icon-bookings></icon-bookings>
+      <p>Bookings</p>
+    </div>
+  </div>
+  <div class="flex gap-8 items-center">
+    <div class="flex gap-2 items-center">
+      <icon-payment></icon-payment>
+      <p>Payments</p>
+    </div>
+    <div class="flex gap-2 items-center">
+      <icon-settings></icon-settings>
+      <a>Settings</a>
+    </div>
+  </div>
+</div>

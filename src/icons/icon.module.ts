@@ -29,6 +29,13 @@ import { LinkedinIcon } from './icon-linkedin';
 import { WhatsappIcon } from './icon-whatsapp';
 import { GraphIcon } from './icon-graph';
 import { ComIcon } from './icon-com';
+import { CloseupIcon } from './icon-closeup';
+import { ListIcon } from './icon-list';
+import { GridIcon } from './icon-grid';
+import { NigeriaIcon } from './icon-nigeria';
+import { SpainIcon } from './icon-spain';
+import { EnglandIcon } from './icon-england';
+import { ChinaIcon } from './icon-china';
 
 @NgModule({
   imports: [CommonModule],
@@ -62,6 +69,13 @@ import { ComIcon } from './icon-com';
     WhatsappIcon,
     GraphIcon,
     ComIcon,
+    CloseupIcon,
+    ListIcon,
+    GridIcon,
+    NigeriaIcon,
+    SpainIcon,
+    EnglandIcon,
+    ChinaIcon,
   ],
   exports: [
     WorkshopIcon,
@@ -93,6 +107,13 @@ import { ComIcon } from './icon-com';
     WhatsappIcon,
     GraphIcon,
     ComIcon,
+    CloseupIcon,
+    ListIcon,
+    GridIcon,
+    NigeriaIcon,
+    SpainIcon,
+    EnglandIcon,
+    ChinaIcon,
   ],
 })
 export class IconModule {}

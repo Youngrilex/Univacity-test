@@ -1,8 +1,8 @@
 import {  Component } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
-import { IconModule } from '../../icons/icon.module';
-import { RouterLink } from '@angular/router';
+import { IconModule } from '../../../icons/icon.module';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -15,10 +15,20 @@ export class NavComponent {
   navbarOpen:boolean= false;
 
 
-
-
   toggleNavbar() {
     this.navbarOpen = !this.navbarOpen;
-    console.log('Navbar state:', this.navbarOpen);
+  }
+
+  isSearchIcon: boolean = true;
+
+  constructor(private router: Router) {}
+
+  onIconClick() {
+    if (this.isSearchIcon) {
+      this.router.navigate(['/search']);
+    } else {
+      this.router.navigate(['/home']);
+    }
+    this.isSearchIcon = !this.isSearchIcon;
   }
 }

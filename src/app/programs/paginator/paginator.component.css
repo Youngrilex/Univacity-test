@@ -1,0 +1,8 @@
+/* paginator.component.css */
+.disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+.active {
+  @apply font-bold bg-gray-200;
+}

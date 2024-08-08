@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IconModule } from '../../icons/icon.module';
+import { IconModule } from '../../../icons/icon.module';
 ;
 
 @Component({
